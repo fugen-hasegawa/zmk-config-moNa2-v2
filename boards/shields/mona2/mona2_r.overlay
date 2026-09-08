@@ -58,7 +58,7 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
-    input-processors = <>;   // ★追加: デフォルトのY軸反転を打ち消す(無変換)
+    /delete-property/ input-processors;   // ★親(mona2.dtsi)側のY軸反転設定を削除
 
     scroller {
         layers = <3>;
