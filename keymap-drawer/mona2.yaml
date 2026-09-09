@@ -48,7 +48,7 @@ layers:
   - HOME
   - UP ARROW
   - END
-  - '5'
+  - {t: ▽, type: trans}
   - F1
   - F2
   - F3
