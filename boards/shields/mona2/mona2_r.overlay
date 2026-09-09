@@ -66,6 +66,7 @@
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
             <&zip_xy_to_scroll_mapper>,   // ← カーソル移動→スクロール変換
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
-            <&zip_scroll_scaler 1 10>;     // ← スクロール量を1/5に調整
+            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,   // ★追加: 縦スクロール(上下)を反転
+            <&zip_scroll_scaler 1 15>;     // ← スクロール量を1/5から調整
     };
 };
