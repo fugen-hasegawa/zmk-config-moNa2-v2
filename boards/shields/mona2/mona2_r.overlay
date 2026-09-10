@@ -48,7 +48,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // P0.02 (MOTION) ※そのまま流用
-        res-cpi = <700>;                            // ★変更: cpi → res-cpi (PAW3222用プロパティ名) 数値を下げると感度が下がる(デフォルト値800)
+        res-cpi = <650>;                            // ★変更: cpi → res-cpi (PAW3222用プロパティ名) 数値を下げると感度が下がる(デフォルト値800)
         // swap-xy / invert-x / invert-y / evt-type / x-input-code / y-input-code は
         // PAW3222ドライバに存在しないプロパティなので削除
     };
