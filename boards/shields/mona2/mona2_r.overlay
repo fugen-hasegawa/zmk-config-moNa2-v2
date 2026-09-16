@@ -2,6 +2,26 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+/ {
+    input_processors {
+        zip_scroll_x_scaler: zip_scroll_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;   // 横スクロール
+            track-remainders;
+        };
+        zip_scroll_y_scaler: zip_scroll_y_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;    // 縦スクロール
+            track-remainders;
+        };
+    };
+};
+
+
 &default_transform {
     col-offset = <6>;
 };
@@ -67,6 +87,7 @@
             <&zip_xy_to_scroll_mapper>,   // ← カーソル移動→スクロール変換
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,   // ★追加: 縦スクロール(上下)を反転
-            <&zip_scroll_scaler 1 35>;     // ← スクロール量を1/5から調整
+            <&zip_scroll_x_scaler 1 50>,     // ★横スクロール量
+            <&zip_scroll_y_scaler 1 40>;     // ★縦スクロール量 ← スクロール量を1/5から調整
     };
 };
