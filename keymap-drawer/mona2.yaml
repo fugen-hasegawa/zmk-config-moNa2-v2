@@ -142,7 +142,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Alt+LEFT ARROW
-  - LANG ZENKAKUHANKAKU
+  - LANGUAGE 5
   - Alt+LEFT ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
